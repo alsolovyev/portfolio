@@ -1,0 +1,71 @@
+/**
+ * Custom tabs
+ */
+$tabs-transition-duration: 300
+$tabs-border: 1px solid rgba($white, .1)
+$tab-padding: $gap
+
+.tabs
+  padding-bottom: #{$tab-padding + 'px'}
+  border-bottom: $tabs-border
+
+  &__nav
+    position: relative
+    display: flex
+    justify-content: center
+    border-bottom: $tabs-border
+    margin-bottom: #{$tab-padding + 'px'}
+
+  &__line
+    position: absolute
+    bottom: -1px
+    left: 50%
+    width: 1px
+    height: 2px
+    background: $base-accent-color
+    transition: transform #{$tabs-transition-duration + 'ms'}, left #{$tabs-transition-duration + 'ms'}
+    transform-origin: left
+
+  // &__list
+  //   display: flex
+  //   justify-content: center
+  //   // font-size: 22px
+  //   // font-weight: 400
+  //   line-height: 1
+
+  &__btn
+    font-size: 2rem
+    font-weight: 500
+    padding-bottom: .5em
+  //   margin-right: #{$gap + 'px'}
+  //   &:last-child
+  //     margin-right: 0
+  //   &:hover
+  //     color: $base-accent-color
+
+  &__content
+    position: relative
+    transition: height #{$tabs-transition-duration + 'ms'}
+    will-change: height
+
+  &__article
+    position: absolute
+    z-index: 1
+    columns: 2
+    column-gap: 3em
+    opacity: 0
+    transform: translate3d(0, 10px, 0)
+    transition: opacity #{$tabs-transition-duration + 'ms'}, transform #{$tabs-transition-duration + 'ms'}
+    pointer-events: none
+    transition-delay: 0
+
+    @include max-width(700)
+      columns: 1
+
+    &--is-shown
+      z-index: 10
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+      transition-delay: 100ms
+      pointer-events: auto
+

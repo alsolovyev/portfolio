@@ -1,0 +1,26 @@
+<footer class="footer container" id="contacts">
+  {# BEGIN Logo #}
+  <h3 class="h1">{% include 'njk/ui/_logo.njk' %}</h3>
+  {# END Logo #}
+
+  {# BEGIN Social Media #}
+  <ul class="footer__list list">
+    {% for profile in profiles %}
+    <li class="list__item">
+      <a
+        href="{{ profile.url }}"
+        target="_blank"
+        aria-label="{{ profile.label }}">
+        <svg class="icon">
+          <use xlink:href="#{{ profile.icon }}"></use>
+        </svg>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {# END Social Media #}
+
+  {# BEGIN Copyright #}
+  <small class="grey">{{ copyright | safe }}</small>
+  {# END Copyright #}
+</footer>

@@ -1,0 +1,19 @@
+/**
+ * Main site logo
+ */
+
+.logo
+  display: flex
+  &:hover
+    .logo__bold::first-letter
+      color: $blue
+
+  &__bold
+    font-weight: 300
+
+  &__light
+    font-weight: 100
+
+  &__bold,
+  &__light
+    pointer-events: none

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50" width="50px" height="50px">
+  <style type="text/css">
+    .c { -webkit-animation: rotate 1500ms ease-in-out infinite; animation: rotate 1500ms ease-in-out infinite }
+    @-webkit-keyframes rotate {
+      0% {
+        stroke-dasharray: 1, 125;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 90, 125;
+        stroke-dashoffset: -35;
+      }
+      100% {
+        stroke-dasharray: 90, 125;
+        stroke-dashoffset: -123;
+      }
+    }
+    @keyframes rotate {
+      0% {
+        stroke-dasharray: 1, 125;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 90, 125;
+        stroke-dashoffset: -35;
+      }
+      100% {
+        stroke-dasharray: 90, 125;
+        stroke-dashoffset: -123;
+      }
+    }
+  </style>
+  <circle
+    class="c"
+    fill="none"
+    stroke="#FF5370"
+    stroke-width="2"
+    stroke-dasharray="1, 125"
+    stroke-dashoffset="0"
+    stroke-linecap="round"
+    cx="25" cy="25" r="20"/>
+</svg>

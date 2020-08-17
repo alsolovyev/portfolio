@@ -1,0 +1,84 @@
+/**
+ * Mixins:
+ *  - max-width
+ *  - min-width
+ *  - mm-width
+ *  - max-height
+ *  - min-height
+ *  - mm-width
+ *  - print
+ */
+
+
+/**
+ * For screens whose width is less than or equal to `$width`
+ *
+ * @param {number} $width - Maximum screen width in pixels
+ */
+@mixin max-width($width)
+  @media only screen and (max-width: #{$width + 'px'})
+    @content
+
+
+/**
+ * For screens whose width is greater than or equal to `$width`
+ *
+ * @param {number} $width - Minimum screen width in pixels
+ */
+@mixin min-width($width)
+  @media only screen and (min-width: #{$width + 'px'})
+    @content
+
+
+/**
+ * For screens with a width of `$max-width` to `$min-width`
+ *
+ * @param {number} $max-width - Maximum screen width in pixels
+ * @param {number} $min-width - Minimum screen width in pixels
+ */
+@mixin mm-width($max-width, $min-width)
+  $max: max($max-width, $min-width)
+  $min: min($max-width, $min-width)
+  @media only screen and (max-width: #{$max + 'px'}) and (min-width: #{$min + 'px'})
+    @content
+
+
+/**
+ * For screens whose height is less than or equal to `$height`
+ *
+ * @param {number} $height - Maximum screen height in pixels
+ */
+@mixin max-height($height)
+  @media only screen and (max-height: #{$height + 'px'})
+    @content
+
+
+/**
+ * For screens whose height is greater than or equal to `$height`
+ *
+ * @param {number} $height - Minimum screen height in pixels
+ */
+@mixin min-height($height)
+  @media only screen and (min-height: #{$height + 'px'})
+    @content
+
+
+/**
+ * For screens with a height of `$max-height` to `$min-height`
+ *
+ * @param {number} $max-height - Maximum screen height in pixels
+ * @param {number} $min-height - Minimum screen height in pixels
+ */
+@mixin mm-height($max-height, $min-height)
+  $max: max($max-height, $min-height)
+  $min: min($max-height, $min-height)
+  @media only screen and (max-height: #{$max + 'px'}) and (min-height: #{$min + 'px'})
+    @content
+
+
+/**
+ * Media query for print
+ */
+@mixin print()
+  @media print
+    @content

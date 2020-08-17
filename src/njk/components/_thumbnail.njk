@@ -1,0 +1,29 @@
+{% macro thumbnail(image, index) %}
+  {% if index == 1 %}
+    {% set sizes = '(min-width: 960px) 700px, calc(100vw - 50px)' %}
+  {% elif index == 8 %}
+    {% set sizes = '(min-width: 960px) 700px, (min-width: 600px) calc(50vw - 50px), calc(100vw - 50px)' %}
+  {% else %}
+    {% set sizes = '(min-width: 960px) 320px, (min-width: 600px) calc(50vw - 50px), calc(100vw - 50px)' %}
+  {% endif %}
+
+  {% set srcset = "/assets/images/works/" + image.src.small + " 320w, " +
+                  "/assets/images/works/" + image.src.medium + " 600w, " +
+                  "/assets/images/works/" + image.src.big + " 960w, " +
+                  "/assets/images/works/" + image.src.original + " 1920w" %}
+
+  <section class="thumbnail">
+    <button class="thumbnail__btn"
+      aria-label="Open image in original size"
+      data-original="/assets/images/works/{{image.src.original}}"
+      data-title="{{ image.description }}"></button>
+
+    <img
+      data-thumbnail
+      class="thumbnail__img"
+      sizes="{{ sizes }}"
+      data-srcset="{{ srcset }}"
+      data-src="/assets/images/works/{{image.src.original}}"
+      alt="{{ image.description }}">
+  </section>
+{% endmacro %}

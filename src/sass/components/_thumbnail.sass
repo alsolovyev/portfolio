@@ -1,0 +1,69 @@
+/**
+ * Gallery image thumbnail
+ */
+
+.thumbnail
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: center
+
+    /* stylelint-disable */
+    // filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale")
+    // // Firefox 10+
+    // filter: gray
+    // // IE6-9
+    // -webkit-filter: grayscale(100%)
+    // // Chrome 19+ & Safari 6+
+    // filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)
+    // -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)"
+    /* stylelint-enable */
+
+  &__btn
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 10
+    width: 100%
+    height: 100%
+    background-image: radial-gradient(rgba($black, 0), rgba($black, .8))
+    opacity: 0
+    transition: opacity 500ms
+
+    &::after
+      content: ''
+      position: absolute
+      // top: 50%
+      // left: 50%
+      top: 2rem
+      right: 2rem
+      width: 2rem
+      height: 2rem
+      // margin: -1rem 0  0 -1rem
+      // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%2382AAFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M304 96h112v112M406 106L112 400M208 416H96V304'/%3E%3C/svg%3E")
+      // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%2382AAFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M432 320v112H320M422 422L304 304M80 192V80h112M90 90l118 118M320 80h112v112M422 90L304 208M192 432H80V320M90 422l118-118'/%3E%3C/svg%3E")
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Cpath fill='%23F2F3F4' d='M19 3v3h4.8l-4.4 4.5 2 2L26 8.2v5h3V3M6 24v-4.6H3V29h9.6v-3H8l5-5-2-2'%3E%3C/path%3E%3C/svg%3E")
+      background-position: 50% 50%
+      background-size: 2rem, 100%
+      background-repeat: no-repeat
+      transition: transform 500ms
+      transform: scale3d(0, 0, 0)
+      transform-origin: center
+
+    &:hover,
+    &:focus
+      opacity: 1
+      &::after
+        transform: scale3d(1, 1, 1)
+
+      // + .thumbnail__img
+      //   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale")
+      //   -webkit-filter: grayscale(0%)

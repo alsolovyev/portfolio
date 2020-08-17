@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "checkJs": false,
+    "target": "es5",
+    "module": "es2015",
+    "lib": [
+      "dom"
+    ]
+  },
+  "include": ["js/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

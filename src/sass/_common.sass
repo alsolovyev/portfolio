@@ -1,0 +1,83 @@
+// @include dev-outlines
+
+::selection
+  background: $base-font-color
+  color: $base-bg-color
+
+
+/** Base */
+html
+  font-size: 62.5%
+
+body
+  padding: 0 #{$gap + 'px'}
+  background-color: $base-bg-color
+  color: $base-font-color
+  font: 300 14px/1.5 'SF Pro Display', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  // @include pattern
+  @include hide-scrollbar
+
+/** Page is loading */
+.page-is-loading
+  overflow: hidden
+
+  .preloader
+
+    &::before,
+    &::after
+      animation: none
+
+    &__txt
+      opacity: 1
+
+
+/** Container */
+.container
+  width: 100%
+  max-width: #{$page-max-width + 'px'}
+  margin: 0 auto
+
+
+/** Simple tabs */
+dl
+  dd
+    margin-bottom: #{$gap * 2 + 'px'}
+    &:last-child
+      margin-bottom: 0
+
+
+/** SVG Icons */
+.icon
+  width: 1em
+  height: 1em
+  fill: currentColor
+  pointer-events: none
+
+
+/** Simple link  */
+.s-link
+  position: relative
+  color: $base-font-color
+  outline: none
+  &:after
+    content: ''
+    position: absolute
+    right: 2px
+    bottom: -2px
+    left: 2px
+    height: 1px
+    background: $blue
+    transform: scale3d(0, 1, 1)
+    transform-origin: right
+    transition: transform 300ms ease-in-out
+
+
+  &:hover,
+  &:focus
+    // color: $base-accent-color
+
+    &:after
+      transform: scale3d(1, 1, 1)
+      transform-origin: left

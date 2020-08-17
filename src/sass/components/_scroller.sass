@@ -1,0 +1,29 @@
+/**
+ * Scroll to top button
+ */
+
+.scroller
+  position: fixed
+  right: #{$gap * 1.5 + 'px'}
+  bottom: #{$gap + 'px'}
+  width: #{$gap + 'px'}
+  height: #{$gap + 'px'}
+  transition: opacity 300ms, transform 300ms
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -25%) rotate(-45deg)
+    width: 50%
+    height: 50%
+    border-top: 2px solid currentColor
+    border-right: 2px solid currentColor
+
+  &:hover::after
+    border-color: $base-accent-color
+
+  &--is-hidden
+    pointer-events: none
+    opacity: 0
+    transform: translate3d(0, 10px, 0)

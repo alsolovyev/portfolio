@@ -1,0 +1,41 @@
+@include font-face('SFHello', 'SFHello-Regular')
+
+
+/** Common typography */
+h1,h2,h3,h4,h5,h6
+  font-weight: 400
+  &:not(:first-child)
+    margin-top: 2em
+
+p
+  color: $grey // $grey-dark
+  &:not(:first-child)
+    margin-top: 1em
+
+ul,ol
+  &:not([class])
+    margin: 3em 0 3em 1.5em
+    color: $grey
+    li
+      margin-bottom: 1em
+
+.h1
+  font-size: 2.6rem
+
+/** Font colors */
+// .accent
+//   color: $base-accent-color
+
+.red
+  color: $red
+
+.grey
+  color: $grey-dark
+
+// .white
+//   color: $white
+
+/** Font styles */
+.narrow
+  margin: 0
+  line-height: 1

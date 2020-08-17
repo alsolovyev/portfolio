@@ -1,0 +1,35 @@
+/**
+ * Spinner animation
+ */
+@keyframes spin
+  100%
+    transform: rotate(360deg)
+
+
+/**
+ * Preloader animation
+ */
+@keyframes skew
+  0%
+    transform: translate3d(0, 0, 0)
+  50%
+    transform: translate3d(0, -50%, 0) skewY(10deg)
+  100%
+    transform: translate3d(0, -100%, 0)
+
+/**
+ * Loading animation
+ */
+@keyframes loading
+  0%
+    transform-origin: left
+    transform: scale3d(0, 1, 1)
+  50%
+    transform-origin: left
+    transform: scale3d(1, 1, 1)
+  50.1%
+    transform-origin: right
+    transform: scale3d(1, 1, 1)
+  100%
+    transform-origin: right
+    transform: scale3d(0, 1, 1)

@@ -1,0 +1,9 @@
+{% from 'njk/components/_thumbnail.njk' import thumbnail %}
+
+<ul class="gallery" data-gallery>
+  {% for work in works %}
+    <li class="gallery__item">
+      {{ thumbnail(work, loop.index) }}
+    </li>
+  {% endfor %}
+</ul>

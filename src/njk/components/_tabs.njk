@@ -1,0 +1,8 @@
+<dl data-custom-tabs>
+  {% for article in articles %}
+    <dt>
+      <h2>{{ article.title }}</h2>
+    </dt>
+    <dd>{{ article.content | safe }}</dd>
+  {% endfor %}
+</dl>

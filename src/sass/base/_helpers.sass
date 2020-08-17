@@ -1,0 +1,12 @@
+/**
+ * Background pattern
+ */
+
+@mixin pattern($first-color: rgba(#121212, .3), $second-color: rgba(#121212, .5), $size: 10)
+    $dbl-size: #{$size * 2 + 'px'}
+    $size: #{$size + 'px'}
+
+    $first-gradient: repeating-linear-gradient(45deg, $first-color 0, $first-color $size, $second-color $size, $second-color $dbl-size)
+    $second-gradient: repeating-linear-gradient(-45deg, $first-color 0, $first-color $size, $second-color $size, $second-color $dbl-size)
+
+    background-image: $first-gradient, $second-gradient

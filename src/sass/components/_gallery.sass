@@ -1,0 +1,48 @@
+/**
+ * Image gallery
+ */
+
+.gallery
+  display: grid
+  grid-gap: #{$gap / 5 + 'px'}
+  grid-template-columns: repeat(3, 1fr)
+  margin: 2rem 0 5rem 0
+
+  &__item
+    position: relative
+    // @include pattern
+
+    &::after
+      content: ''
+      display: inline-block
+      padding-top: 100%
+      vertical-align: top
+
+    &:first-child,
+    &:nth-child(8)
+      grid-column: span 2
+      grid-row: span 2
+
+  @include max-width($page-max-width)
+    grid-template-columns: repeat(2, 1fr)
+
+    &__item
+      &:first-child
+        grid-row: auto
+        &:after
+          padding-top: 50%
+      &:nth-child(8)
+        grid-column: auto
+        grid-row: auto
+
+
+  @include max-width(600)
+    grid-template-columns: repeat(1, 1fr)
+
+    &__item
+      &:first-child
+        grid-column: auto
+        &:after
+          padding-top: 100%
+
+
