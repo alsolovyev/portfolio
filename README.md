@@ -4,7 +4,7 @@
 
 Simple, beautiful and thoughtfully designed photographer portfolio
 
-![portfolio](https://habrastorage.org/webt/na/nr/ul/nanrulpgb-twniefamecjdhqqy0.jpeg)
+![portfolio](https://habrastorage.org/webt/-a/jh/k6/-ajhk6w5zmy4hr0zjshw3g0heqe.jpeg)
 
 
 ## Template
